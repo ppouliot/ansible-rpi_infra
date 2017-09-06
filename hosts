@@ -67,3 +67,7 @@ hackintosh ansible_ssh_user=peter
 10.1.1.8 ansible_ssh_user=peter
 [coreos]
 10.1.1.167 ansible_ssh_user=core ansible_python_interpreter=/home/core/bin/python
+[systems]
+jenkins-master
+puppetmaster
+quartermaster

@@ -1,0 +1,15 @@
+# hostname for your HypriotOS device
+hostname: bp1
+
+# optional wireless network settings
+wifi:
+  interfaces:
+#     wlan0:
+#       ssid: "MyNetwork"
+#       password: "secret_password"
+runcmd:
+  - /usr/bin/curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | /usr/bin/apt-key add -
+  - /bin/echo deb http://apt.kubernetes.io/ kubernetes-xenial main > /etc/apt/sources.list.d/kubernetes.list
+  - /usr/bin/apt-get update -y && /usr/bin/apt-get dist-upgrade -y && apt-get --purge autoremove -y
+  - /usr/bin/apt-get install -y screen rsync docker-compose
+  - cd /usr/local/src && /usr/bin/git clone https://github.com/ppouliot/rpi-mbc

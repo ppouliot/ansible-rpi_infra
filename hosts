@@ -60,7 +60,6 @@ bp2
 bp3
 bp4
 bp5
-bp-poe
 
 [apple]
 hackintosh ansible_ssh_user=peter
@@ -68,6 +67,7 @@ hackintosh ansible_ssh_user=peter
 [coreos]
 10.1.1.167 ansible_ssh_user=core ansible_python_interpreter=/home/core/bin/python
 [systems]
+bp-poe
 jenkins-master
 puppetmaster
 quartermaster

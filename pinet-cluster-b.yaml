@@ -1,0 +1,12 @@
+- name: Configure ClusterHat across 3 nodes
+  hosts: pinet-cluster
+  sudo: false
+  tasks:
+    - name: make /opt/bin on nodes
+      command: mkdir -p /opt/bin
+
+    - name: Copy cluster.sh to nodes
+      copy: src=files/clusterhat.sh dest=/opt/bin/clusterhat.sh mode=0777
+
+    - name: Run clusterhat.sh on nodes 
+      command: /opt/clusterhat.sh on all
